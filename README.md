@@ -1,12 +1,30 @@
-# practice5.sops-demo
+practice4.cron-vs-systemd
 
-Практическая работа по управлению секретами с использованием **SOPS + Age**.
+Практическая работа по изучению и сравнению планировщиков задач Cron и systemd timers в Linux.
+
+## Цель работы
+
+Целью данной практической работы является изучение и сравнение двух механизмов планирования задач в Linux:
+планировщика cron и таймеров systemd, а также получение практических навыков по созданию, настройке и отладке
+периодически выполняемых задач.
+
 
 ## Описание
 В репозитории показан безопасный workflow хранения секретов:
 - секреты хранятся только в зашифрованном виде
 - приватные ключи не коммитятся в Git
 - используется Age как криптографический backend для SOPS
+
+## Требования к окружению
+
+Для выполнения работы требуется Linux-окружение.
+
+Поддерживаемые варианты:
+- Ubuntu 20.04 / 22.04 / 24.04
+- WSL2 (Windows Subsystem for Linux)
+- Виртуальная машина с Linux
+
+⚠️ Git Bash и Windows CMD не поддерживают cron и systemd.
 
 ## Используемые инструменты
 - age
@@ -15,16 +33,16 @@
 - GitHub
 
 ## Структура проекта
-practice5.sops-demo
 
-├── .gitignore
-
-├── .sops.yaml
-
+```text
+practice4.cron-vs-systemd
 ├── README.md
+├── cron
+│   └── send_request.sh
+├── systemd
+│   ├── send-request.service
+│   └── send-request.timer
+└── logs
+    └── send-request.log
+```
 
-└── secrets
-
-└── database
-
-└── postgres.enc.yaml
