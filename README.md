@@ -37,4 +37,22 @@ practice4.cron-vs-systemd
 └── systemd
     ├── send-request.service
     └── send-request.timer
+```
 
+## Скриншоты выполнения
+
+### Cron
+![Cron job](screenshots/cron.png)
+
+### Systemd timer
+![Systemd timers](screenshots/systemd-timers.png)
+
+### Systemd service
+![Systemd service status](screenshots/systemd-service.png)
+
+### Логи выполнения
+![Execution logs](screenshots/logs.png)
+
+
+## Особенности среды WSL
+При запуске systemd-сервиса в среде WSL фиксируется ошибка выполнения (`status=203/EXEC`), связанная с ограничениями systemd в Windows Subsystem for Linux. Unit-файл и таймер настроены корректно, что подтверждается логами systemd. В классической Linux-среде данный сервис запускается без ошибок.
