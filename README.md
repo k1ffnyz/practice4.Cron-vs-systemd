@@ -16,9 +16,15 @@
 
 ## Структура проекта
 practice5.sops-demo
+
 ├── .gitignore
+
 ├── .sops.yaml
+
 ├── README.md
+
 └── secrets
+
 └── database
+
 └── postgres.enc.yaml
