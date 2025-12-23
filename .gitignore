@@ -1,0 +1,4 @@
+keys.txt
+.config/sops/age/
+*.tmp
+*.swp
